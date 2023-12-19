@@ -3,7 +3,7 @@ import { UserService } from './user.service';
 import { User } from './user.type';
 import { Request } from 'express';
 import { UseGuards } from '@nestjs/common';
-import { GraphqlAuthGuard } from 'src/auth/graphql-auth.guard';
+import { GraphqlAuthGuard } from '../auth/graphql-auth.guard';
 import { createWriteStream } from 'fs';
 import { join } from 'path';
 import { v4 as uuidv4 } from 'uuid';
