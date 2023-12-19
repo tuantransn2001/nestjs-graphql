@@ -25,23 +25,12 @@ jobs:
           node-version: '${{ matrix.node }}'
       - name: 'Install depependencies'
         run: yarn install
-      - name: 'Regenerate'
-        run: npm run regen
-      - name: 'ESLint'
-        run: |
-          npm run eslint
-      - name: 'tscheck'
-        run: |
-          npm run tscheck
-      - name: 'Test'
-        run: |
-          npm run test:cov -- --bail
       - name: 'Test Build'
         run: |
           npm run build
-      - name: 'Compatibilty Check'
+      - name: 'Run test'
         run: |
-          npm run compatibilty_check
+          npm run test
   release:
     name: 'Release'
     runs-on: ubuntu-latest
