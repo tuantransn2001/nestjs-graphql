@@ -10,8 +10,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { TokenService } from './token/token.service';
-import { ChatroomModule } from './chatroom/chatroom.module';
-import { LiveChatroomModule } from './live-chatroom/live-chatroom.module';
+
 const pubSub = new RedisPubSub({
   connection: {
     host: process.env.REDIS_HOST || 'localhost',
@@ -73,8 +72,6 @@ const pubSub = new RedisPubSub({
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    ChatroomModule,
-    LiveChatroomModule,
   ],
   controllers: [AppController],
   providers: [AppService],

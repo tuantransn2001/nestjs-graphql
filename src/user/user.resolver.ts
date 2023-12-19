@@ -43,10 +43,4 @@ export class UserResolver {
   ) {
     return this.userService.searchUsers(fullname, context.req.user.sub);
   }
-
-  @UseGuards(GraphqlAuthGuard)
-  @Query(() => [User])
-  getUsersOfChatroom(@Args('chatroomId') chatroomId: number) {
-    return this.userService.getUsersOfChatroom(chatroomId);
-  }
 }
