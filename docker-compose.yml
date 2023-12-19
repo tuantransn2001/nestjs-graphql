@@ -7,9 +7,9 @@ services:
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_USER: johndoe
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: chatapp
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db_name
     volumes:
       - my_postgres_data:/var/lib/postgresql/data
 
